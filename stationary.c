@@ -4,7 +4,7 @@ int main() {
     int choice;
     printf("Welcome to our Boookshop!\n");
     printf("(1)Log as a customer");
-    printf("(2))Log as a customer");
+    printf("(2)Log as a customer");
     printf("(3)Exit");
     scanf("%d", &choice);
 
@@ -30,7 +30,14 @@ void customer() {
 }
 
 void owner() {
-    
+
+    int choice;
+    printf("Choose your option");
+    printf("(1)Add items");
+    printf("(2)Edit Items");
+    printf("(3)Show Items");
+    printf("(4)Exit");
+    scanf("%d", &choice);   
 }
 
 void order() {
