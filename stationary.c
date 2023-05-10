@@ -18,6 +18,8 @@ int main() {
         case 3:
         exit();
     }
+
+
 }
 
 void customer() {
@@ -38,6 +40,20 @@ void owner() {
     printf("(3)Show Items");
     printf("(4)Exit");
     scanf("%d", &choice);   
+
+    switch (choice) {
+        case 1:
+        addItems();
+
+        case 2:
+        editItems();
+
+        case 3:
+        showItems();
+
+        case 4:
+        exit();
+    }
 }
 
 void order() {
