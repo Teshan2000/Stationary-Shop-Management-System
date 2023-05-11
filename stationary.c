@@ -32,6 +32,19 @@ void customer() {
     printf("(4)Exit");
     scanf("%d", &choice);   
 
+    switch (choice) {
+        case 1:
+        selectItems();
+
+        case 2:
+        displayItems();
+
+        case 3:
+        viewBill();
+
+        case 4:
+        exit();
+    }
 
 
     int item;
