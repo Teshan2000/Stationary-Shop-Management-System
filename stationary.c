@@ -46,14 +46,19 @@ void customer() {
         exit();
     }
 
-
-    int item;
-    printf("Choose your stationary item");
-    printf("Books");
-    printf("Pencils");
-    printf("Pens");
-    scanf("%d", &item);
 }
+
+void selectItems() {
+        printf("Select items");
+}
+void displayItems() {
+    printf("Display items");
+}
+void viewBill() {
+    printf("View Bill");
+}
+
+
 
 void owner() {
 
@@ -84,8 +89,4 @@ void order() {
     int additem;
     printf("");
 
-}
-
-void viewBill() {
-    
 }
