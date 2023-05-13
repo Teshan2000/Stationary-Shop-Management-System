@@ -85,6 +85,18 @@ void owner() {
     }
 }
 
+
+void addItems() {
+        printf("Select items");
+}
+void editItems() {
+    printf("Display items");
+}
+void showItems() {
+    printf("View Bill");
+}
+
+
 void order() {
     int additem;
     printf("");
