@@ -34,10 +34,10 @@ void customer() {
 
     switch (choice) {
         case 1:
-        selectItems();
+        displayItems();        
 
         case 2:
-        displayItems();
+        selectItems();
 
         case 3:
         viewBill();
@@ -48,12 +48,25 @@ void customer() {
 
 }
 
-void selectItems() {
-        printf("Select items");
-}
+
 void displayItems() {
     printf("Display items");
+    printf("(1)Books");
+    printf("(2)Pencils");
+    printf("(3)Pens");
+    printf("(4)Rulers");
+    printf("(5)Erasers");
+    printf("(6)File Covers");
+    printf("(7)Drawing Books");
+    printf("(8)Colour Pencils");
 }
+
+void selectItems() {
+        printf("Select items");
+        int choice;
+        printf("Choose your option");         
+}
+
 void viewBill() {
     printf("View Bill");
 }
