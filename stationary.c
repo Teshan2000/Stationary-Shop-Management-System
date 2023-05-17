@@ -64,7 +64,12 @@ void displayItems() {
 void selectItems() {
         printf("Select items");
         int choice;
-        printf("Choose your option");         
+        printf("Choose your option");  
+        printf("(1)Enter Item Id: "); 
+        printf("(2)Enter Item Name: ");
+        printf("(3)Enter Item Quantity: ");         
+}        
+       
 }
 
 void viewBill() {
