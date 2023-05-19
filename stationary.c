@@ -66,11 +66,11 @@ void selectItems() {
         int choice;
         printf("Choose your option");  
         printf("(1)Enter Item Id: "); 
-        printf("(2)Enter Item Name: ");
-        printf("(3)Enter Item Quantity: ");         
+        printf("(2)Enter Item Quantity: "); 
+        printf("You can buy {} items of {} item.");         
 }        
        
-}
+
 
 void viewBill() {
     printf("View Bill");
@@ -105,13 +105,19 @@ void owner() {
 
 
 void addItems() {
-        printf("Select items");
+        printf("add items");
+        printf("How many items do you want to insert to the list");
+        printf("(1)Enter Item Id: "); 
+        printf("(2)Enter Item Name: ");
+        printf("(3)Enter Item Quantity: "); 
+        printf("Your shop has {} items of {} item."); 
+
 }
 void editItems() {
-    printf("Display items");
+    printf("edit items");
 }
 void showItems() {
-    printf("View Bill");
+    printf("show items");
 }
 
 
