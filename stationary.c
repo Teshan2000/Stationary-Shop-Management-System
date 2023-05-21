@@ -105,12 +105,23 @@ void owner() {
 
 
 void addItems() {
-        printf("add items");
-        printf("How many items do you want to insert to the list");
+
+    int count;
+    char id, name, quantity;
+    printf("add items");
+    printf("How many items do you want to insert to the list");
+    scanf("%d", &count);
+
+    for (int i = 1; i <= count; i++) {
         printf("(1)Enter Item Id: "); 
+        scanf("%d", &id);
         printf("(2)Enter Item Name: ");
+        scanf("%d", &name);
         printf("(3)Enter Item Quantity: "); 
-        printf("Your shop has {} items of {} item."); 
+        scanf("%d", &quantity);
+        printf("Your shop has %s items of %s item." ,quantity,name); 
+    }
+    
 
 }
 void editItems() {
