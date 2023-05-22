@@ -125,8 +125,24 @@ void addItems() {
 
 }
 void editItems() {
+    
+    int count;
+    char id, name, quantity;
     printf("edit items");
+    printf("How many items do you want to edit of the list");
+    scanf("%d", &count);
+
+    for (int i = 1; i <= count; i++) {
+        printf("(1)Enter New Item Id: "); 
+        scanf("%d", &id);
+        printf("(2)Enter New Item Name: ");
+        scanf("%d", &name);
+        printf("(3)Enter New Item Quantity: "); 
+        scanf("%d", &quantity);
+        printf("Now your shop has %s items of %s item." ,quantity,name); 
+    }
 }
+
 void showItems() {
     printf("show items");
 }
