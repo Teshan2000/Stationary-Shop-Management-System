@@ -144,7 +144,17 @@ void editItems() {
 }
 
 void showItems() {
-    printf("show items");
+
+    int count;
+    char id, name, quantity;
+
+    for (int i = 1; i <= count; i++) {
+        printf("show items");
+        printf("Id \tName \tQuantity", id,name,quantity);
+        printf("%s \t%s \t%s", id,name,quantity);
+
+    }
+    printf("Your shop has item list of %s items." ,count); 
 }
 
 
