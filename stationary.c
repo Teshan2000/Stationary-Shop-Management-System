@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+void customer();
+void owner();
+void addItems();
+void editItems();
+void showItems();
+void displayItems();
+void selectItems();
+void viewBill();
+
 int main() {
     int choice;
     printf("Welcome to our Boookshop!\n");
@@ -18,16 +27,14 @@ int main() {
         case 3:
         exit();
     }
-
-
 }
 
 void customer() {
 
     int choice;
     printf("Choose your option");
-    printf("(1)Select items");
-    printf("(2)Display Items");
+    printf("(1)Display items");
+    printf("(2)Select items");
     printf("(3)View Bill");
     printf("(4)Exit");
     scanf("%d", &choice);   
@@ -45,7 +52,6 @@ void customer() {
         case 4:
         exit();
     }
-
 }
 
 
@@ -62,20 +68,17 @@ void displayItems() {
 }
 
 void selectItems() {
-        printf("Select items");
-        int choice;
-        printf("Choose your option");  
-        printf("(1)Enter Item Id: "); 
-        printf("(2)Enter Item Quantity: "); 
-        printf("You can buy {} items of {} item.");         
-}        
-       
-
+    printf("Select items");
+    int choice;
+    printf("Choose your option");  
+    printf("(1)Enter Item Id: "); 
+    printf("(2)Enter Item Quantity: "); 
+    printf("You bought {} items of {} item.");         
+}              
 
 void viewBill() {
     printf("View Bill");
 }
-
 
 
 void owner() {
@@ -120,10 +123,9 @@ void addItems() {
         printf("(3)Enter Item Quantity: "); 
         scanf("%d", &quantity);
         printf("Your shop has %s items of %s item." ,quantity,name); 
-    }
-    
-
+    }    
 }
+
 void editItems() {
     
     int count;
@@ -147,19 +149,13 @@ void showItems() {
 
     int count;
     char id, name, quantity;
+    printf("show items");
 
     for (int i = 1; i <= count; i++) {
-        printf("show items");
+        
         printf("Id \tName \tQuantity", id,name,quantity);
         printf("%s \t%s \t%s", id,name,quantity);
-
     }
     printf("Your shop has item list of %s items." ,count); 
 }
 
-
-void order() {
-    int additem;
-    printf("");
-
-}
