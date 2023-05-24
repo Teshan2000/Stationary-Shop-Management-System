@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void customer();
 void owner();
@@ -25,7 +26,10 @@ int main() {
         owner();
 
         case 3:
-        exit();
+        exit(0);
+
+        default:
+        printf("You entered an invalid option\n");
     }
 }
 
@@ -36,21 +40,28 @@ void customer() {
     printf("(1)Display items");
     printf("(2)Select items");
     printf("(3)View Bill");
-    printf("(4)Exit");
+    printf("(4)Back to Home page");
     scanf("%d", &choice);   
 
     switch (choice) {
         case 1:
-        displayItems();        
+        displayItems();  
+        break;      
 
         case 2:
         selectItems();
+        break;
 
         case 3:
         viewBill();
+        break;
 
         case 4:
-        exit();
+        main();
+
+        default:
+        printf("You entered an invalid option\n");
+        break;
     }
 }
 
@@ -88,21 +99,28 @@ void owner() {
     printf("(1)Add items");
     printf("(2)Edit Items");
     printf("(3)Show Items");
-    printf("(4)Exit");
+    printf("(4)Back to Home page");
     scanf("%d", &choice);   
 
     switch (choice) {
         case 1:
         addItems();
+        break;
 
         case 2:
         editItems();
+        break;
 
         case 3:
         showItems();
+        break;
 
         case 4:
-        exit();
+        main();
+
+        default:
+        printf("You entered an invalid option\n");
+        break;
     }
 }
 
