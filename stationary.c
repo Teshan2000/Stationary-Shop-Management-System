@@ -13,9 +13,9 @@ void viewBill();
 int main() {
     int choice;
     printf("Welcome to our Boookshop!\n");
-    printf("(1)Log as a customer");
-    printf("(2)Log as the owner");
-    printf("(3)Exit");
+    printf("(1)Log as a customer\n");
+    printf("(2)Log as the owner\n");
+    printf("(3)Exit\n");
     scanf("%d", &choice);
 
     switch (choice) {
@@ -36,11 +36,11 @@ int main() {
 void customer() {
 
     int choice;
-    printf("Choose your option");
-    printf("(1)Display items");
-    printf("(2)Select items");
-    printf("(3)View Bill");
-    printf("(4)Back to Home page");
+    printf("Choose your option\n");
+    printf("(1)Display items\n");
+    printf("(2)Select items\n");
+    printf("(3)View Bill\n");
+    printf("(4)Back to Home page\n");
     scanf("%d", &choice);   
 
     switch (choice) {
@@ -67,39 +67,43 @@ void customer() {
 
 
 void displayItems() {
-    printf("Display items");
-    printf("(1)Books");
-    printf("(2)Pencils");
-    printf("(3)Pens");
-    printf("(4)Rulers");
-    printf("(5)Erasers");
-    printf("(6)File Covers");
-    printf("(7)Drawing Books");
-    printf("(8)Colour Pencils");
+    printf("Display items\n");
+    printf("(1)Books\n");
+    printf("(2)Pencils\n");
+    printf("(3)Pens\n");
+    printf("(4)Rulers\n");
+    printf("(5)Erasers\n");
+    printf("(6)File Covers\n");
+    printf("(7)Drawing Books\n");
+    printf("(8)Colour Pencils\n");
 }
 
 void selectItems() {
-    printf("Select items");
+    printf("Select items\n");
     int choice;
-    printf("Choose your option");  
-    printf("(1)Enter Item Id: "); 
-    printf("(2)Enter Item Quantity: "); 
-    printf("You bought {} items of {} item.");         
+    char id, quantity;
+
+    printf("Choose your option\n");  
+    printf("\n(1)Enter Item Id: "); 
+    scanf("%d", &id);
+    printf("\n(2)Enter Item Quantity: "); 
+    scanf("%d", &quantity);
+    printf("\nYou bought {} items of {} item.");         
 }              
 
 void viewBill() {
-    printf("View Bill");
+    printf("View Bill\n");
 }
 
 
 void owner() {
 
     int choice;
-    printf("Choose your option");
-    printf("(1)Add items");
-    printf("(2)Edit Items");
-    printf("(3)Show Items");
-    printf("(4)Back to Home page");
+    printf("Choose your option\n");
+    printf("(1)Add items\n");
+    printf("(2)Edit Items\n");
+    printf("(3)Show Items\n");
+    printf("(4)Back to Home page\n");
     scanf("%d", &choice);   
 
     switch (choice) {
@@ -129,18 +133,18 @@ void addItems() {
 
     int count;
     char id, name, quantity;
-    printf("add items");
+    printf("add items\n");
     printf("How many items do you want to insert to the list");
     scanf("%d", &count);
 
     for (int i = 1; i <= count; i++) {
-        printf("(1)Enter Item Id: "); 
+        printf("\n(1)Enter Item Id: "); 
         scanf("%d", &id);
-        printf("(2)Enter Item Name: ");
+        printf("\n(2)Enter Item Name: ");
         scanf("%d", &name);
-        printf("(3)Enter Item Quantity: "); 
+        printf("\n(3)Enter Item Quantity: "); 
         scanf("%d", &quantity);
-        printf("Your shop has %s items of %s item." ,quantity,name); 
+        printf("\nYour shop has %s items of %s item." ,quantity,name); 
     }    
 }
 
@@ -148,18 +152,18 @@ void editItems() {
     
     int count;
     char id, name, quantity;
-    printf("edit items");
+    printf("edit items\n");
     printf("How many items do you want to edit of the list");
     scanf("%d", &count);
 
     for (int i = 1; i <= count; i++) {
-        printf("(1)Enter New Item Id: "); 
+        printf("\n(1)Enter New Item Id: "); 
         scanf("%d", &id);
-        printf("(2)Enter New Item Name: ");
+        printf("\n(2)Enter New Item Name: ");
         scanf("%d", &name);
-        printf("(3)Enter New Item Quantity: "); 
+        printf("\n(3)Enter New Item Quantity: "); 
         scanf("%d", &quantity);
-        printf("Now your shop has %s items of %s item." ,quantity,name); 
+        printf("\nNow your shop has %s items of %s item." ,quantity,name); 
     }
 }
 
@@ -167,13 +171,13 @@ void showItems() {
 
     int count;
     char id, name, quantity;
-    printf("show items");
+    printf("show items\n");
 
     for (int i = 1; i <= count; i++) {
         
         printf("Id \tName \tQuantity", id,name,quantity);
         printf("%s \t%s \t%s", id,name,quantity);
     }
-    printf("Your shop has item list of %s items." ,count); 
+    printf("\nYour shop has item list of %s items." ,count); 
 }
 
