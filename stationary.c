@@ -10,6 +10,22 @@ void displayItems();
 void selectItems();
 void viewBill();
 
+struct items{
+    int itemId;
+    char itemName[10];
+    int quantity;
+}
+
+struct addItems{
+    int count;
+    char id, name, quantity;
+}
+
+struct editItems{
+    int count;
+    char id, name, quantity;
+}
+
 int main() {
     int choice;
     printf("Welcome to our Boookshop!\n");
