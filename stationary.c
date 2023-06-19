@@ -32,6 +32,8 @@ int main() {
     printf("(1)Log as a customer\n");
     printf("(2)Log as the owner\n");
     printf("(3)Exit\n");
+
+    printf("\n Please select your choice: ");
     scanf("%d", &choice);
 
     switch (choice) {
@@ -84,6 +86,9 @@ void customer() {
 
 void displayItems() {
     printf("Display items\n");
+
+    file1 = fopen("itemlist.txt", "r");
+    
     printf("(1)Books\n");
     printf("(2)Pencils\n");
     printf("(3)Pens\n");
@@ -92,6 +97,8 @@ void displayItems() {
     printf("(6)File Covers\n");
     printf("(7)Drawing Books\n");
     printf("(8)Colour Pencils\n");
+
+    fclose(flie1);
 }
 
 void selectItems() {
@@ -99,16 +106,25 @@ void selectItems() {
     int choice;
     char id, quantity;
 
+    file1 = fopen("itemlist.txt", "r");
+    file2 = fopen("bill.txt", "a");
+
     printf("Choose your option\n");  
     printf("\n(1)Enter Item Id: "); 
     scanf("%d", &id);
     printf("\n(2)Enter Item Quantity: "); 
     scanf("%d", &quantity);
-    printf("\nYou bought {} items of {} item.");         
+    printf("\nYou bought {} items of {} item.");  
+
+    fclose(flie);       
 }              
 
 void viewBill() {
     printf("View Bill\n");
+
+    file1 = fopen("bill.txt", "r");
+
+    fclose(flie1);
 }
 
 
@@ -150,8 +166,11 @@ void addItems() {
     int count;
     char id, name, quantity;
     printf("add items\n");
+
     printf("How many items do you want to insert to the list");
     scanf("%d", &count);
+
+    file1 = fopen("itemlist.txt", "a");
 
     for (int i = 1; i <= count; i++) {
         printf("\n(1)Enter Item Id: "); 
@@ -162,6 +181,7 @@ void addItems() {
         scanf("%d", &quantity);
         printf("\nYour shop has %s items of %s item." ,quantity,name); 
     }    
+    fclose(flie1);
 }
 
 void editItems() {
@@ -172,6 +192,8 @@ void editItems() {
     printf("How many items do you want to edit of the list");
     scanf("%d", &count);
 
+    file1 = fopen("itemlist.txt", "w");
+
     for (int i = 1; i <= count; i++) {
         printf("\n(1)Enter New Item Id: "); 
         scanf("%d", &id);
@@ -181,6 +203,7 @@ void editItems() {
         scanf("%d", &quantity);
         printf("\nNow your shop has %s items of %s item." ,quantity,name); 
     }
+    fclose(flie1);
 }
 
 void showItems() {
@@ -189,11 +212,14 @@ void showItems() {
     char id, name, quantity;
     printf("show items\n");
 
+    file1 = fopen("itemlist.txt", "r");
+
     for (int i = 1; i <= count; i++) {
         
         printf("Id \tName \tQuantity", id,name,quantity);
         printf("%s \t%s \t%s", id,name,quantity);
     }
     printf("\nYour shop has item list of %s items." ,count); 
+    fclose(flie1);
 }
 
