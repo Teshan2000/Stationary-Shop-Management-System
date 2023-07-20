@@ -121,10 +121,28 @@ void selectItems() {
 
 void viewBill() {
     printf("View Bill\n");
-
+    items it;
+    printf("                             === Welcome to our Boookshop! ===                                         \n");
+    printf("\n----------------------------------------------------------------------------------------------------\n");
+    
     file1 = fopen("bill.txt", "r");
+    printf("----------------------------------------------------------------------------------------------------\n");
+    printf("ItemNumber\t\tName\t\tQuantity\t\tPrice\t\tTotal");
+    printf("\n----------------------------------------------------------------------------------------------------\n");
+
+    while(fread(&it,sizeof(items),file1)) {
+
+        printf("\t\t\t %ld",bl.itemid);
+        printf("\n%s",bl.itemname);        
+        printf("\t\t\t%ld",bl.qunti);
+        printf("\t\t\t%ld",bl.prize->price);
+        printf("\t\t\t\t%ld\n", total);
+
+    }
 
     fclose(flie1);
+    printf("----------------------------------------------------------------------------------------------------\n");
+    printf("                             ===== Thank you come Again =====                                         \n");
 }
 
 
