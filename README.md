@@ -14,3 +14,7 @@ So, the owner can,
 1. add items
 2. edit items
 3. view the item list
+
+
+This stationary system is consists of,
+Books, Pens, Pencils, Rulers, Pastels.
