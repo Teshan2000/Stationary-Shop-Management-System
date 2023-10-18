@@ -89,14 +89,16 @@ void displayItems() {
 
     file1 = fopen("itemlist.txt", "r");
     
-    printf("(1)Books\n");
-    printf("(2)Pencils\n");
-    printf("(3)Pens\n");
-    printf("(4)Rulers\n");
-    printf("(5)Erasers\n");
-    printf("(6)File Covers\n");
-    printf("(7)Drawing Books\n");
-    printf("(8)Colour Pencils\n");
+    printf("---------------------------------------------------------\n");
+    printf("(1)Books-------------------------------------Rs.50\n");
+    printf("(2)Pencils-----------------------------------Rs.20\n");
+    printf("(3)Pens--------------------------------------Rs.25\n");
+    printf("(4)Rulers------------------------------------Rs.15\n");
+    printf("(5)Erasers-----------------------------------Rs.30\n");
+    printf("(6)File Covers-------------------------------Rs.20\n");
+    printf("(7)Drawing Books-----------------------------Rs.30\n");
+    printf("(8)Colour Pencils----------------------------Rs.35\n");
+    printf("---------------------------------------------------------\n");
 
     fclose(flie1);
 }
@@ -207,6 +209,7 @@ void editItems() {
     int count;
     char id, name, quantity;
     printf("edit items\n");
+    
     printf("How many items do you want to edit of the list");
     scanf("%d", &count);
 
