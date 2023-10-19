@@ -89,16 +89,18 @@ void displayItems() {
 
     file1 = fopen("itemlist.txt", "r");
     
-    printf("---------------------------------------------------------\n");
-    printf("(1)Books-------------------------------------Rs.50\n");
-    printf("(2)Pencils-----------------------------------Rs.20\n");
-    printf("(3)Pens--------------------------------------Rs.25\n");
-    printf("(4)Rulers------------------------------------Rs.15\n");
-    printf("(5)Erasers-----------------------------------Rs.30\n");
-    printf("(6)File Covers-------------------------------Rs.20\n");
-    printf("(7)Drawing Books-----------------------------Rs.30\n");
-    printf("(8)Colour Pencils----------------------------Rs.35\n");
-    printf("---------------------------------------------------------\n");
+    printf("                                      === Items Available ===                                       \n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
+    printf("item id\t\titem name\t\tprize\t\tquntity\n\n");
+    printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
+    printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
+    printf("3\t\tPens\t\t\tRs.25\t\t25\n");
+    printf("4\t\tRulers\t\t\tRs.15\t\t25\n");
+    printf("5\t\tErasers\t\t\tRs.30\t\t25\n");
+    printf("6\t\tFile Covers\t\tRs.20\t\t25\n");
+    printf("7\t\tDrawing Books\t\tRs.30\t\t25\n");
+    printf("8\t\tColour Pencils\t\tRs.35\t\t25\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
 
     fclose(flie1);
 }
