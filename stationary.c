@@ -27,11 +27,14 @@ struct editItems{
 }
 
 int main() {
+
     int choice;
-    printf("Welcome to our Boookshop!\n");
+    printf("\n                                === Welcome to our Boookshop! ===                                    \n");
+    printf("\n-----------------------------------------------------------------------------------------------------\n");
     printf("(1)Log as a customer\n");
     printf("(2)Log as the owner\n");
     printf("(3)Exit\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
 
     printf("\n Please select your choice: ");
     scanf("%d", &choice);
@@ -44,6 +47,8 @@ int main() {
         owner();
 
         case 3:
+        printf("\n-----------------------------------------------------------------------------------------------------\n");
+        printf("                             ===== Thank you come Again =====                                         \n");
         exit(0);
 
         default:
@@ -54,7 +59,9 @@ int main() {
 void customer() {
 
     int choice;
-    printf("Choose your option\n");
+    printf("\n-----------------------------------------------------------------------------------------------------\n");
+    printf("                                    === Choose your option ===                                        \n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
     printf("(1)Display items\n");
     printf("(2)Select items\n");
     printf("(3)View Bill\n");
@@ -83,9 +90,7 @@ void customer() {
     }
 }
 
-
 void displayItems() {
-    printf("Display items\n");
 
     file1 = fopen("itemlist.txt", "r");
     
@@ -107,18 +112,19 @@ void displayItems() {
 
 void selectItems() {
     printf("Select items\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
     int choice;
     char id, quantity;
 
     file1 = fopen("itemlist.txt", "r");
     file2 = fopen("bill.txt", "a");
-
-    printf("Choose your option\n");  
+ 
     printf("\n(1)Enter Item Id: "); 
     scanf("%d", &id);
     printf("\n(2)Enter Item Quantity: "); 
     scanf("%d", &quantity);
     printf("\nYou bought {} items of {} item.");  
+    printf("-----------------------------------------------------------------------------------------------------\n");
 
     fclose(flie);       
 }              
@@ -153,7 +159,9 @@ void viewBill() {
 void owner() {
 
     int choice;
-    printf("Choose your option\n");
+    printf("\n-----------------------------------------------------------------------------------------------------\n");
+    printf("                                    === Choose your option ===                                        \n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
     printf("(1)Add items\n");
     printf("(2)Edit Items\n");
     printf("(3)Show Items\n");
@@ -188,6 +196,7 @@ void addItems() {
     int count;
     char id, name, quantity;
     printf("add items\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
 
     printf("How many items do you want to insert to the list");
     scanf("%d", &count);
@@ -202,6 +211,7 @@ void addItems() {
         printf("\n(3)Enter Item Quantity: "); 
         scanf("%d", &quantity);
         printf("\nYour shop has %s items of %s item." ,quantity,name); 
+        printf("-----------------------------------------------------------------------------------------------------\n");
     }    
     fclose(flie1);
 }
@@ -211,6 +221,7 @@ void editItems() {
     int count;
     char id, name, quantity;
     printf("edit items\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
     
     printf("How many items do you want to edit of the list");
     scanf("%d", &count);
@@ -225,6 +236,7 @@ void editItems() {
         printf("\n(3)Enter New Item Quantity: "); 
         scanf("%d", &quantity);
         printf("\nNow your shop has %s items of %s item." ,quantity,name); 
+        printf("-----------------------------------------------------------------------------------------------------\n");
     }
     fclose(flie1);
 }
@@ -234,6 +246,7 @@ void showItems() {
     int count;
     char id, name, quantity;
     printf("show items\n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
 
     file1 = fopen("itemlist.txt", "r");
 
@@ -243,6 +256,7 @@ void showItems() {
         printf("%s \t%s \t%s", id,name,quantity);
     }
     printf("\nYour shop has item list of %s items." ,count); 
+    printf("-----------------------------------------------------------------------------------------------------\n");
     fclose(flie1);
 }
 
