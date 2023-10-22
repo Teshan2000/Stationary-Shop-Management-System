@@ -96,7 +96,7 @@ void displayItems() {
     
     printf("                                      === Items Available ===                                       \n");
     printf("-----------------------------------------------------------------------------------------------------\n");
-    printf("item id\t\titem name\t\tprize\t\tquntity\n\n");
+    printf("item id\t\titem name\t\tprize\t\tquantity\n\n");
     printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
     printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
     printf("3\t\tPens\t\t\tRs.25\t\t25\n");
@@ -113,17 +113,22 @@ void displayItems() {
 void selectItems() {
     printf("Select items\n");
     printf("-----------------------------------------------------------------------------------------------------\n");
-    int choice;
+    int count;
     char id, quantity;
+
+    printf("How many items do you want to buy from the shop?");
+    scanf("%d", &count);
 
     file1 = fopen("itemlist.txt", "r");
     file2 = fopen("bill.txt", "a");
  
-    printf("\n(1)Enter Item Id: "); 
-    scanf("%d", &id);
-    printf("\n(2)Enter Item Quantity: "); 
-    scanf("%d", &quantity);
-    printf("\nYou bought {} items of {} item.");  
+    for (int i = 1; i <= count; i++) {
+        printf("\n(1)Enter Item Id: "); 
+        scanf("%d", &id);
+        printf("\n(2)Enter Item Quantity: "); 
+        scanf("%d", &quantity);
+    }
+    printf("\nYou bought %s items of %s item.",quantity, id);  
     printf("-----------------------------------------------------------------------------------------------------\n");
 
     fclose(flie);       
