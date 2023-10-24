@@ -52,41 +52,49 @@ int main() {
         exit(0);
 
         default:
-        printf("You entered an invalid option\n");
+        printf("                              === You entered an invalid option ===                                  \n");
+        printf("-----------------------------------------------------------------------------------------------------\n");
     }
+
+    return 0;
 }
 
 void customer() {
 
     int choice;
-    printf("\n-----------------------------------------------------------------------------------------------------\n");
-    printf("                                    === Choose your option ===                                        \n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
-    printf("(1)Display items\n");
-    printf("(2)Select items\n");
-    printf("(3)View Bill\n");
-    printf("(4)Back to Home page\n");
-    scanf("%d", &choice);   
+    int x;
+    while (x==0){
+        printf("\n-----------------------------------------------------------------------------------------------------\n");
+        printf("                                    === Choose your option ===                                        \n");
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf("(1)Display items\n");
+        printf("(2)Select items\n");
+        printf("(3)View Bill\n");
+        printf("(4)Back to Home page\n");
+        scanf("%d", &choice);   
 
-    switch (choice) {
-        case 1:
-        displayItems();  
-        break;      
+        switch (choice) {
+            case 1:
+            displayItems();  
+            break;      
 
-        case 2:
-        selectItems();
-        break;
+            case 2:
+            selectItems();
+            break;
 
-        case 3:
-        viewBill();
-        break;
+            case 3:
+            viewBill();
+            break;
 
-        case 4:
-        main();
+            case 4:
+            main();
 
-        default:
-        printf("You entered an invalid option\n");
-        break;
+            default:
+            printf("                              === You entered an invalid option ===                                  \n");
+            printf("-----------------------------------------------------------------------------------------------------\n");
+            x=0;
+            break;
+        }
     }
 }
 
@@ -164,34 +172,39 @@ void viewBill() {
 void owner() {
 
     int choice;
-    printf("\n-----------------------------------------------------------------------------------------------------\n");
-    printf("                                    === Choose your option ===                                        \n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
-    printf("(1)Add items\n");
-    printf("(2)Edit Items\n");
-    printf("(3)Show Items\n");
-    printf("(4)Back to Home page\n");
-    scanf("%d", &choice);   
+    int x=0;
+    while (x==0){
+        printf("\n-----------------------------------------------------------------------------------------------------\n");
+        printf("                                    === Choose your option ===                                        \n");
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf("(1)Add items\n");
+        printf("(2)Edit Items\n");
+        printf("(3)Show Items\n");
+        printf("(4)Back to Home page\n");
+        scanf("%d", &choice);   
 
-    switch (choice) {
-        case 1:
-        addItems();
-        break;
+        switch (choice) {
+            case 1:
+            addItems();
+            break;
 
-        case 2:
-        editItems();
-        break;
+            case 2:
+            editItems();
+            break;
 
-        case 3:
-        showItems();
-        break;
+            case 3:
+            showItems();
+            break;
 
-        case 4:
-        main();
+            case 4:
+            main();
 
-        default:
-        printf("You entered an invalid option\n");
-        break;
+            default:
+            printf("                              === You entered an invalid option ===                                  \n");
+            printf("-----------------------------------------------------------------------------------------------------\n");
+            x=0;
+            break;
+        }
     }
 }
 
