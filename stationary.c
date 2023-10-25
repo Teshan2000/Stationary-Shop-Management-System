@@ -100,11 +100,13 @@ void customer() {
 
 void displayItems() {
 
+    items *it;
+    FILE *fp;
     file1 = fopen("itemlist.txt", "r");
     
     printf("                                      === Items Available ===                                       \n");
     printf("-----------------------------------------------------------------------------------------------------\n");
-    printf("item id\t\titem name\t\tprize\t\tquantity\n\n");
+    printf("item id\t\titem name\t\tprice\t\tquantity\n\n");
     printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
     printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
     printf("3\t\tPens\t\t\tRs.25\t\t25\n");
@@ -114,6 +116,11 @@ void displayItems() {
     printf("7\t\tDrawing Books\t\tRs.30\t\t25\n");
     printf("8\t\tColour Pencils\t\tRs.35\t\t25\n");
     printf("-----------------------------------------------------------------------------------------------------\n");
+
+    while(fread(&it,sizeof(items),1,fp)) {
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf("%d\t\t %s\t\t %d\t\t %d\n\n", it->itemId, it->itemName, it->price, it->quantity);
+    }  
 
     fclose(flie1);
 }
@@ -273,20 +280,23 @@ void editItems() {
 
 void showItems() {
 
-    int count;
-    char id, name, quantity;
-    printf("show items\n");
+    items *it;
+    FILE *fp;
+
+    fp = fopen("itemlist.txt", "r");
+
+    printf("                                      === Items Available ===                                       \n");
+    printf("-----------------------------------------------------------------------------------------------------\n");
+    printf("item id\t\titem name\t\tprice\t\tquantity\n\n");
+
+   while(fread(&it,sizeof(items),1,fp)) {
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf("%d\t\t %s\t\t %d\t\t %d\n\n", it->itemId, it->itemName, it->price, it->quantity);
+    } 
+
+    //printf("\nYour shop has item list of %s items." ,count); 
     printf("-----------------------------------------------------------------------------------------------------\n");
 
-    file1 = fopen("itemlist.txt", "r");
-
-    for (int i = 1; i <= count; i++) {
-        
-        printf("Id \tName \tQuantity", id,name,quantity);
-        printf("%s \t%s \t%s", id,name,quantity);
-    }
-    printf("\nYour shop has item list of %s items." ,count); 
-    printf("-----------------------------------------------------------------------------------------------------\n");
-    fclose(flie1);
+    fclose(fp);
 }
 
