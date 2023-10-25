@@ -135,8 +135,20 @@ void selectItems() {
         scanf("%d", &id);
         printf("\n(2)Enter Item Quantity: "); 
         scanf("%d", &quantity);
+
+        price1 = it->price;
+        total = price1*it->quantity;
+        
+        printf("-----------------------------------------------------------------------------------------------------\n");
+        printf("\t Id: %d",it->itemId);
+        printf("\t\t|\t\t Checkout \t\t|\t\t %s\n",it->itemName);
+        printf("-----------------------------------------------------------------------------------------------------");
+        printf("\n\t\t\t| Unit Price --------------------- Rs.%.2f|",it->price);
+        printf("\n\t\t\t| Quantity -----------------------  x  %.2f|",it->quantity);
+        printf("\n\t\t\t| Total Price -------------------- Rs.%.2f|\n\t\t\t\n",total);
+        printf("-----------------------------------------------------------------------------------------------------\n");
     }
-    printf("\nYou bought %s items of %s item.",quantity, id);  
+    //printf("\nYou bought %s items of %s item.",quantity, id);  
     printf("-----------------------------------------------------------------------------------------------------\n");
 
     fclose(flie);       
