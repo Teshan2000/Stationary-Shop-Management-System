@@ -1,30 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void customer();
 void owner();
 void addItems();
 void editItems();
 void showItems();
+
+void customer();
 void displayItems();
 void selectItems();
 void viewBill();
 
-struct items{
+typedef struct items{
     int itemId;
     char itemName[10];
+    int price;
     int quantity;
-}
-
-struct addItems{
-    int count;
-    char id, name, quantity;
-}
-
-struct editItems{
-    int count;
-    char id, name, quantity;
-}
+}items;
 
 int main() {
 
@@ -126,22 +118,25 @@ void displayItems() {
 }
 
 void selectItems() {
-    printf("Select items\n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
-    int count;
-    char id, quantity;
+
+    items *it;
+    int n,i,x;
+    int found=0;
+    double price1,total;
+    FILE *fp;
+    FILE *fp2;
 
     printf("How many items do you want to buy from the shop?");
-    scanf("%d", &count);
+    scanf("%d", &n);
 
-    file1 = fopen("itemlist.txt", "r");
-    file2 = fopen("bill.txt", "a");
+    fp = fopen("itemlist.txt", "r");
+    fp2 = fopen("tempbill.txt", "a+");
  
-    for (int i = 1; i <= count; i++) {
+    for (i=0; i<=n; i++) {
         printf("\n(1)Enter Item Id: "); 
-        scanf("%d", &id);
+        scanf("%d", &it[i].itemId);
         printf("\n(2)Enter Item Quantity: "); 
-        scanf("%d", &quantity);
+        scanf("%d", &it[i].quantity);
 
         price1 = it->price;
         total = price1*it->quantity;
@@ -158,7 +153,8 @@ void selectItems() {
     //printf("\nYou bought %s items of %s item.",quantity, id);  
     printf("-----------------------------------------------------------------------------------------------------\n");
 
-    fclose(flie);       
+    fclose(fp);     
+    fclose(fp2);     
 }              
 
 void viewBill() {
