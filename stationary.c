@@ -94,19 +94,19 @@ void displayItems() {
 
     items *it;
     FILE *fp;
-    file1 = fopen("itemlist.txt", "r");
+    fp = fopen("itemlist.txt", "r");
     
     printf("                                      === Items Available ===                                       \n");
     printf("-----------------------------------------------------------------------------------------------------\n");
     printf("item id\t\titem name\t\tprice\t\tquantity\n\n");
-    printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
-    printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
-    printf("3\t\tPens\t\t\tRs.25\t\t25\n");
-    printf("4\t\tRulers\t\t\tRs.15\t\t25\n");
-    printf("5\t\tErasers\t\t\tRs.30\t\t25\n");
-    printf("6\t\tFile Covers\t\tRs.20\t\t25\n");
-    printf("7\t\tDrawing Books\t\tRs.30\t\t25\n");
-    printf("8\t\tColour Pencils\t\tRs.35\t\t25\n");
+    // printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
+    // printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
+    // printf("3\t\tPens\t\t\tRs.25\t\t25\n");
+    // printf("4\t\tRulers\t\t\tRs.15\t\t25\n");
+    // printf("5\t\tErasers\t\t\tRs.30\t\t25\n");
+    // printf("6\t\tFile Covers\t\tRs.20\t\t25\n");
+    // printf("7\t\tDrawing Books\t\tRs.30\t\t25\n");
+    // printf("8\t\tColour Pencils\t\tRs.35\t\t25\n");
     printf("-----------------------------------------------------------------------------------------------------\n");
 
     while(fread(&it,sizeof(items),1,fp)) {
@@ -114,7 +114,7 @@ void displayItems() {
         printf("%d\t\t %s\t\t %d\t\t %d\n\n", it->itemId, it->itemName, it->price, it->quantity);
     }  
 
-    fclose(flie1);
+    fclose(fp);
 }
 
 void selectItems() {
@@ -158,27 +158,32 @@ void selectItems() {
 }              
 
 void viewBill() {
-    printf("View Bill\n");
-    items it;
+
+    items *it;
+    int total;
+    FILE *fp;
+
     printf("                             === Welcome to our Boookshop! ===                                         \n");
     printf("\n----------------------------------------------------------------------------------------------------\n");
     
-    file1 = fopen("bill.txt", "r");
+    fp = fopen("bill.txt", "r");
     printf("----------------------------------------------------------------------------------------------------\n");
     printf("ItemNumber\t\tName\t\tQuantity\t\tPrice\t\tTotal");
     printf("\n----------------------------------------------------------------------------------------------------\n");
 
-    while(fread(&it,sizeof(items),file1)) {
+    while(fread(&it,sizeof(items),1,fp)) {
 
-        printf("\t\t\t %ld",bl.itemid);
-        printf("\n%s",bl.itemname);        
-        printf("\t\t\t%ld",bl.qunti);
-        printf("\t\t\t%ld",bl.prize->price);
-        printf("\t\t\t\t%ld\n", total);
+        total = it->price*it->quantity;
 
+        printf("\t\t\t %ld",it->itemId);
+        printf("\n%s",it->itemName);  
+        printf("\t\t\t%ld",it->price);      
+        printf("\t\t\t%ld",it->quantity);        
+        printf("\t\t\t\t%ld\n",total);
     }
 
-    fclose(flie1);
+    fclose(fp);
+    
     printf("----------------------------------------------------------------------------------------------------\n");
     printf("                             ===== Thank you come Again =====                                         \n");
 }
