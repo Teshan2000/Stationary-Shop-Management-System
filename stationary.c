@@ -259,33 +259,41 @@ void addItems() {
     // printf("-----------------------------------------------------------------------------------------------------\n");
     
     fclose(fp);
-    
+
     owner();
 }
 
 void editItems() {
     
-    int count;
-    char id, name, quantity;
-    printf("edit items\n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
+    items *it;
+    int n,i,found;
+    FILE *fp;
+    FILE *tempfp;
     
     printf("How many items do you want to edit of the list");
-    scanf("%d", &count);
+    scanf("%d", &n);
 
-    file1 = fopen("itemlist.txt", "w");
+    fp = fopen("itemlist.txt", "r");
+    tempfp = fopen("tempitemlist.txt", "w");
 
-    for (int i = 1; i <= count; i++) {
+    for (i=1; i<=n; i++) {
         printf("\n(1)Enter New Item Id: "); 
-        scanf("%d", &id);
+        scanf("%d", &it[i].itemId);
         printf("\n(2)Enter New Item Name: ");
-        scanf("%d", &name);
+        scanf("%d", &it[i].itemName);
+        printf("\n(3)Enter New Item Price: "); 
+        scanf("%d", &it[i].price);
         printf("\n(3)Enter New Item Quantity: "); 
-        scanf("%d", &quantity);
-        printf("\nNow your shop has %s items of %s item." ,quantity,name); 
-        printf("-----------------------------------------------------------------------------------------------------\n");
+        scanf("%d", &it[i].quantity);
+
+        fwrite(&it,sizeof(items),1,tempfp);        
     }
-    fclose(flie1);
+
+    printf("\nNow your shop has %s items of %s item." ,quantity,name); 
+    printf("-----------------------------------------------------------------------------------------------------\n");
+
+    fclose(fp);
+    fclose(tempfp);
 }
 
 void showItems() {
