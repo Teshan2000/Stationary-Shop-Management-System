@@ -231,27 +231,36 @@ void owner() {
 
 void addItems() {
 
-    int count;
-    char id, name, quantity;
-    printf("add items\n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
+    items *it;
+    int n, i;
+    FILE *fp;
 
     printf("How many items do you want to insert to the list");
-    scanf("%d", &count);
+    scanf("%d", &n);
 
-    file1 = fopen("itemlist.txt", "a");
+    it=(items*)calloc(n,sizeof(items));
 
-    for (int i = 1; i <= count; i++) {
+    fp = fopen("itemlist.txt", "a+");
+
+    for (i=1; i<=n; i++) {
         printf("\n(1)Enter Item Id: "); 
-        scanf("%d", &id);
+        scanf("%d", &it[i].itemId);
         printf("\n(2)Enter Item Name: ");
-        scanf("%d", &name);
+        scanf("%s", &it[i].itemName);
+        printf("\n(3)Enter Item Price: "); 
+        scanf("%d", &it[i].price);
         printf("\n(3)Enter Item Quantity: "); 
-        scanf("%d", &quantity);
-        printf("\nYour shop has %s items of %s item." ,quantity,name); 
-        printf("-----------------------------------------------------------------------------------------------------\n");
+        scanf("%d", &it[i].quantity);  
+
+        fwrite(&it[i],sizeof(items),1,fp);  
     }    
-    fclose(flie1);
+
+    // printf("\nYour shop has %s items of %s item." ,quantity,name); 
+    // printf("-----------------------------------------------------------------------------------------------------\n");
+    
+    fclose(fp);
+    
+    owner();
 }
 
 void editItems() {
