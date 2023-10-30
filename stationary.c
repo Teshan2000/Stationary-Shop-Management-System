@@ -34,14 +34,17 @@ int main() {
     switch (choice) {
         case 1:
         customer();
+        break;
 
         case 2:
         owner();
+        break;
 
         case 3:
         printf("\n-----------------------------------------------------------------------------------------------------\n");
         printf("                             ===== Thank you come Again =====                                         \n");
         exit(0);
+        break;
 
         default:
         printf("                              === You entered an invalid option ===                                  \n");
@@ -94,20 +97,12 @@ void displayItems() {
 
     items *it;
     FILE *fp;
+
     fp = fopen("itemlist.txt", "r");
     
     printf("                                      === Items Available ===                                       \n");
     printf("-----------------------------------------------------------------------------------------------------\n");
     printf("item id\t\titem name\t\tprice\t\tquantity\n\n");
-    // printf("1\t\tBooks\t\t\tRs.50\t\t25\n");
-    // printf("2\t\tPencils\t\t\tRs.20\t\t25\n");
-    // printf("3\t\tPens\t\t\tRs.25\t\t25\n");
-    // printf("4\t\tRulers\t\t\tRs.15\t\t25\n");
-    // printf("5\t\tErasers\t\t\tRs.30\t\t25\n");
-    // printf("6\t\tFile Covers\t\tRs.20\t\t25\n");
-    // printf("7\t\tDrawing Books\t\tRs.30\t\t25\n");
-    // printf("8\t\tColour Pencils\t\tRs.35\t\t25\n");
-    printf("-----------------------------------------------------------------------------------------------------\n");
 
     while(fread(&it,sizeof(items),1,fp)) {
         printf("-----------------------------------------------------------------------------------------------------\n");
@@ -149,7 +144,10 @@ void selectItems() {
         printf("\n\t\t\t| Quantity -----------------------  x  %.2f|",it->quantity);
         printf("\n\t\t\t| Total Price -------------------- Rs.%.2f|\n\t\t\t\n",total);
         printf("-----------------------------------------------------------------------------------------------------\n");
+        
+        fwrite(&it,sizeof(items),1,fp2); 
     }
+
     //printf("\nYou bought %s items of %s item.",quantity, id);  
     printf("-----------------------------------------------------------------------------------------------------\n");
 
@@ -168,7 +166,7 @@ void viewBill() {
     
     fp = fopen("bill.txt", "r");
     printf("----------------------------------------------------------------------------------------------------\n");
-    printf("ItemNumber\t\tName\t\tQuantity\t\tPrice\t\tTotal");
+    printf("Item Id\t\tItem Name\t\tPrice\t\tQuantity\t\tTotal");
     printf("\n----------------------------------------------------------------------------------------------------\n");
 
     while(fread(&it,sizeof(items),1,fp)) {
@@ -192,7 +190,7 @@ void viewBill() {
 void owner() {
 
     int choice;
-    int x=0;
+    int x;
     while (x==0){
         printf("\n-----------------------------------------------------------------------------------------------------\n");
         printf("                                    === Choose your option ===                                        \n");
@@ -228,14 +226,13 @@ void owner() {
     }
 }
 
-
 void addItems() {
 
     items *it;
     int n, i;
     FILE *fp;
 
-    printf("How many items do you want to insert to the list");
+    printf("How many items do you want to insert to the list: ");
     scanf("%d", &n);
 
     it=(items*)calloc(n,sizeof(items));
@@ -249,7 +246,7 @@ void addItems() {
         scanf("%s", &it[i].itemName);
         printf("\n(3)Enter Item Price: "); 
         scanf("%d", &it[i].price);
-        printf("\n(3)Enter Item Quantity: "); 
+        printf("\n(4)Enter Item Quantity: "); 
         scanf("%d", &it[i].quantity);  
 
         fwrite(&it[i],sizeof(items),1,fp);  
@@ -283,17 +280,18 @@ void editItems() {
         scanf("%d", &it[i].itemName);
         printf("\n(3)Enter New Item Price: "); 
         scanf("%d", &it[i].price);
-        printf("\n(3)Enter New Item Quantity: "); 
+        printf("\n(4)Enter New Item Quantity: "); 
         scanf("%d", &it[i].quantity);
 
         fwrite(&it,sizeof(items),1,tempfp);        
     }
 
-    printf("\nNow your shop has %s items of %s item." ,quantity,name); 
+    //printf("\nNow your shop has %s items of %s item." ,quantity,name); 
     printf("-----------------------------------------------------------------------------------------------------\n");
 
     fclose(fp);
     fclose(tempfp);
+    
 }
 
 void showItems() {
